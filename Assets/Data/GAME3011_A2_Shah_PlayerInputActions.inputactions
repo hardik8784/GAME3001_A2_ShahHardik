@@ -109,6 +109,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MiniGameActionMap",
+            "id": "fb2f8547-43f1-4843-88d6-87087c4ce7e0",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "c8998f8c-a874-4b1f-bc03-41888488086a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "37159c1e-3c3b-42d9-a7d7-e4c3c682e3b3",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
