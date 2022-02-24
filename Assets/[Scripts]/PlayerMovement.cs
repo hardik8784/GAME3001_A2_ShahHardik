@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnMovement(InputValue value)
     {
         inputVector = value.Get<Vector2>();
-        print("inputVector : " + inputVector);
+        //print("inputVector : " + inputVector);
     }
     public void OnJump(InputValue value)
     {
@@ -64,5 +65,14 @@ public class PlayerMovement : MonoBehaviour
     public void OnRun(InputValue value)
     {
         playerController.isRunning = value.isPressed;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+       if( other.gameObject.tag == "Finish" )
+        {
+            // Only specifying the sceneName or sceneBuildIndex will load the Scene with the Single mode
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        }
     }
 }
