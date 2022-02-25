@@ -753,7 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   timers: 1e0000002d0000003c000000
-  goals: 0a000000140000001e000000
+  goals: 030000000400000002000000
   validDistance:
   - 30
   - 20

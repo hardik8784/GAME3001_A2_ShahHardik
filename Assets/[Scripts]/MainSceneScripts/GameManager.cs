@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
             secondTimer--;
         }
         Setup();
+
+      
     }
 
     public void Score()
@@ -52,10 +54,20 @@ public class GameManager : MonoBehaviour
         score++;
         //print("Score : " + score);
         UIManager.Instance.UpdateScore(score);
-        if (score == goals[level])
+        if (score == goals[level] && !(score == goals[2]))
         {
+            if(goals[level] == goals[2])
+            {
+                Time.timeScale = 0;
+            }
             //Change to Next Level
-            Time.timeScale = 0;
+            score = 0;
+            UIManager.Instance.UpdateScore(score);
+            level++;
+            UIManager.Instance.UpdateLevel(level);
+            UIManager.Instance.UpdateTimer(timers[level]);
+            UIManager.Instance.UpdateGoal(goals[level]);
+            secondTimer--;       
         }
     }
 
