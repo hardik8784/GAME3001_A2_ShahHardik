@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text TargetText;
     public TMP_Text TimerText;
     public TMP_Text LevelText;
+    public TMP_Text UserInterfaceText;
 
     private void Awake()
     {
@@ -38,5 +39,10 @@ public class UIManager : MonoBehaviour
     public void UpdateLevel(int level)
     {
         LevelText.text = "Level " + level;
+    }
+
+    public void UpdateUserInterfaceText(string condition)
+    {
+        UserInterfaceText.text =  condition;
     }
 }

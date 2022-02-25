@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UIManager.Instance.UpdateUserInterfaceText("Hello, Welcome to the Lockpicking MiniGame");
     }
 
     // Update is called once per frame
@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
         if (timers[level] == 0)
         {
             Destroy(CircleLock);
+          
+            UIManager.Instance.UpdateUserInterfaceText("You Lose");
             Debug.Log("Game Over");
             Time.timeScale = 0;
            
@@ -70,10 +72,16 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.UpdateTimer(timers[level]);
                 UIManager.Instance.UpdateGoal(goals[level]);
                 secondTimer--;
+            UIManager.Instance.UpdateUserInterfaceText("You Succesfuly completed Level " + level);
         }
-        if(score == goals[2])
+        else if(level == 2)
         {
-            Debug.Log("Win");
+            if (score == goals[level])
+            {
+                UIManager.Instance.UpdateUserInterfaceText("You Won");
+                Debug.Log("Win");
+                Time.timeScale = 0;
+            }
         }
     }
 
