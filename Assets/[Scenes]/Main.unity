@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  timers: 1e0000002d0000003c000000
+  timers: 050000000a0000000f000000
   goals: 030000000400000002000000
   validDistance:
   - 30
@@ -763,6 +763,7 @@ MonoBehaviour:
   - 90
   - 45
   level: 0
+  CircleLock: {fileID: 3965665959594007840}
 --- !u!4 &1068365417
 Transform:
   m_ObjectHideFlags: 0

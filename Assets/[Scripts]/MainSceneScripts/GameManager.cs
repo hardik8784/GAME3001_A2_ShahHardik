@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float[] validSpawn;
     public int level = 0;
     private float secondTimer = 0;
+    public GameObject CircleLock;
 
 
     private void Awake()
@@ -45,8 +46,13 @@ public class GameManager : MonoBehaviour
             secondTimer--;
         }
         Setup();
-
-      
+        if (timers[level] == 0)
+        {
+            Destroy(CircleLock);
+            Debug.Log("Game Over");
+            Time.timeScale = 0;
+           
+        }
     }
 
     public void Score()
@@ -54,20 +60,20 @@ public class GameManager : MonoBehaviour
         score++;
         //print("Score : " + score);
         UIManager.Instance.UpdateScore(score);
-        if (score == goals[level] && !(score == goals[2]))
+        if (score == goals[level] && !(score ==goals[2]))
         {
-            if(goals[level] == goals[2])
-            {
-                Time.timeScale = 0;
-            }
             //Change to Next Level
-            score = 0;
-            UIManager.Instance.UpdateScore(score);
-            level++;
-            UIManager.Instance.UpdateLevel(level);
-            UIManager.Instance.UpdateTimer(timers[level]);
-            UIManager.Instance.UpdateGoal(goals[level]);
-            secondTimer--;       
+                score = 0;
+                level++;
+                UIManager.Instance.UpdateScore(score);
+                UIManager.Instance.UpdateLevel(level);
+                UIManager.Instance.UpdateTimer(timers[level]);
+                UIManager.Instance.UpdateGoal(goals[level]);
+                secondTimer--;
+        }
+        if(score == goals[2])
+        {
+            Debug.Log("Win");
         }
     }
 
