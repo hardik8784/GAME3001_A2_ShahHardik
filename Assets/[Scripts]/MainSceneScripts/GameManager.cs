@@ -41,19 +41,32 @@ public class GameManager : MonoBehaviour
         if (secondTimer > 1)
         {
             timers[level]--;
+            UIManager.Instance.UpdateTimer(timers[level]);
             secondTimer--;
         }
+        Setup();
     }
 
     public void Score()
     {
         score++;
-        print("Score : " + score);
-       
+        //print("Score : " + score);
+        UIManager.Instance.UpdateScore(score);
+        if (score == goals[level])
+        {
+            //Change to Next Level
+            Time.timeScale = 0;
+        }
     }
+
     public void FailToClick()
     {
         score = 0;
+        UIManager.Instance.UpdateScore(score);
     }
- 
+    public void Setup()
+    {
+        UIManager.Instance.UpdateGoal(goals[level]);
+        UIManager.Instance.UpdateLevel(level + 1);
+    }
 }

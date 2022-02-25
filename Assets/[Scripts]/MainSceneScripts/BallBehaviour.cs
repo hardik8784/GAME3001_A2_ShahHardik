@@ -96,7 +96,7 @@ public class BallBehaviour : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log(minimumAngle + " < " + eulerAngle + " < " + maximumAngle);
+            //Debug.Log(minimumAngle + " < " + eulerAngle + " < " + maximumAngle);
             // Changes direction before verifying scoring requirements
             clockwise = !clockwise;
             // Verifies if the currentAngle
