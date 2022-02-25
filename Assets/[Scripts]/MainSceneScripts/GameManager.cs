@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(CircleLock);
           
-            UIManager.Instance.UpdateUserInterfaceText("You Lose");
+            UIManager.Instance.UpdateUserInterfaceText("You Lose to open the Lock, Try Again!!");
             Debug.Log("Game Over");
             Time.timeScale = 0;
            
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         {
             if (score == goals[level])
             {
-                UIManager.Instance.UpdateUserInterfaceText("You Won");
+                UIManager.Instance.UpdateUserInterfaceText("You can enter, You Opened the lock!!!");
                 Debug.Log("Win");
                 Time.timeScale = 0;
             }

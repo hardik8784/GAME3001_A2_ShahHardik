@@ -920,8 +920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  timers: 050000000a0000000f000000
-  goals: 010000000100000002000000
+  timers: 3c0000003c0000003c000000
+  goals: 0a0000000f00000014000000
   validDistance:
   - 30
   - 20
